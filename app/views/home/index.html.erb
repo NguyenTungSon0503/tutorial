@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Price</th>
+      <th scope="col">Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for x in @coins['data'] %>   
+            <tr>
+                    <td><%= x['cmc_rank']%></td>
+                    <td><%= x['name']%></td>
+                    <td><%= x['symbol'] %></td>
+                    <td>$<%= x['quote']['USD']['price']%></td>
+                    <td><%= x['quote']['USD']['volume_24h']%></td>
+            </tr>
+    <% end %>
+  </tbody>
+</table>
